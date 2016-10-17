@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "mylist <-list(myDf=mtcars,myVector=1:5,myChar=\"a\")\n# Use[[]] to access lists\nmylist[[1]]\nmylist$myVector[2]\nmylist[[2]][[2]]\nmylist$myDf$mpg\n\n# categorical values\nstr(iris)\nhead(iris)\nz<-lm(Sepal.Length~Sepal.Width+Petal.Length+Species,iris)\nsummary(z)\n",
+    "created" : 1476698937742.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1996644411",
+    "id" : "CCE383F6",
+    "lastKnownWriteTime" : 1476699679,
+    "last_content_update" : 1476699679906,
+    "path" : "~/MoyoBusinessAdvisory/R/RPracticals/lists.R",
+    "project_path" : "lists.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

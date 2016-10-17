@@ -51,3 +51,5 @@ y<-x[x<=0.5] - assign to y all values in x less than or equal to 0.5
 
 df<- data.frame(a=letters,b=runif(26))
 str(df) - gives you structure of the data frame
+R uses Row X Column for indexing
+R scripts define a workflow

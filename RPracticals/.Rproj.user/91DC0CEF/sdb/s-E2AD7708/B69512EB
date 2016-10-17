@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#Understanding R Packages\n#if/else\nif(runif(1)>0.5)\n{\n  print(\"> than 0.5\")\n}else{\n  print(\"<= 0.5\")\n}\nmyFunction<-function(a,b){\n  result = a+b\n  return (result)\n}\nanotherexample(2)\n\n#Apply - allows us to run an R fx on every row or column of data\napply(X=mtcars,MARGIN=2,FUN=mean)\n",
+    "created" : 1476704588605.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1057697106",
+    "id" : "B69512EB",
+    "lastKnownWriteTime" : 1476704884,
+    "last_content_update" : 1476704884573,
+    "path" : "~/MoyoBusinessAdvisory/R/RPracticals/condloopfuncts.R",
+    "project_path" : "condloopfuncts.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
