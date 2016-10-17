@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# authorisation\nif (!require('pacman')) install.packages('pacman')\npacman::p_load(twitteR, ROAuth, RCurl)\n\napi_key = 'kw9WrOgUBP8WAaz5KmKLM7UhT'\napi_secret = '7jBCfklDyBsIJRJ7C6o0wbQasjEGong5FSMpnil0rUiyI2nwFL'\naccess_token = '41815371-nluqz7m9qLLo0hFpZS2VJIazaFwplKaV6975riQot'\naccess_token_secret = 'La9nMpf3urcR7CHBAu9YJBxPTqe5IpWSnWRgzd8UWsKOK'\n\n# Set SSL certs globally\noptions(RCurlOptions = list(cainfo = system.file('CurlSSL', 'cacert.pem', package = 'RCurl')))\n\n# set up the URLs\nreqURL = 'https://api.twitter.com/oauth/request_token'\naccessURL = 'https://api.twitter.com/oauth/access_token'\nauthURL = 'https://api.twitter.com/oauth/authorize'\n\ntwitCred = OAuthFactory$new(consumerKey = api_key, consumerSecret = api_secret, requestURL = reqURL, accessURL = accessURL, authURL = authURL)\n\ntwitCred$handshake(cainfo = system.file('CurlSSL', 'cacert.pem', package = 'RCurl'))\n",
+    "created" : 1476707674100.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1323133315",
+    "id" : "CA167EB8",
+    "lastKnownWriteTime" : 1476709382,
+    "last_content_update" : 1476709382036,
+    "path" : "~/MoyoBusinessAdvisory/R/RPracticals/twittersearch.R",
+    "project_path" : "twittersearch.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

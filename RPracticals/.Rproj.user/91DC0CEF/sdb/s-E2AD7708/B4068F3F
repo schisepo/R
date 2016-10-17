@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "if (!require('pacman')) install.packages('pacman')\npacman::p_load(twitteR, sentiment, plyr, ggplot2, wordcloud, RColorBrewer, httpuv, RCurl, base64enc)\n\noptions(RCurlOptions = list(cainfo = system.file('CurlSSL', 'cacert.pem', package = 'RCurl')))\n\napi_key = 'kw9WrOgUBP8WAaz5KmKLM7UhT'\napi_secret = '7jBCfklDyBsIJRJ7C6o0wbQasjEGong5FSMpnil0rUiyI2nwFL'\naccess_token = '41815371-nluqz7m9qLLo0hFpZS2VJIazaFwplKaV6975riQot'\naccess_token_secret = 'La9nMpf3urcR7CHBAu9YJBxPTqe5IpWSnWRgzd8UWsKOK'\n\n#setup_twitter_oauth(api_key,api_secret,access_token,access_token_secret)\nsetup_twitter_oauth(api_key,api_secret)\n",
+    "created" : 1476711826924.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "705493616",
+    "id" : "B4068F3F",
+    "lastKnownWriteTime" : 1476713812,
+    "last_content_update" : 1476713813007,
+    "path" : "~/MoyoBusinessAdvisory/R/RPracticals/twittersearch2.R",
+    "project_path" : "twittersearch2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

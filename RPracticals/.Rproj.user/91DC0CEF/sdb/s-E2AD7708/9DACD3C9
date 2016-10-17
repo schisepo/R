@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# harvest some tweets\nsome_tweets = searchTwitter('Data Science', n=1000, lang='en')\n\n# get the text\nsome_txt = sapply(some_tweets, function(x) x$getText())\n# remove retweet entities\nsome_txt = gsub('(RT|via)((?:\\\\b\\\\W*@\\\\w+)+)', '', some_txt)\n# remove at people\nsome_txt = gsub('@\\\\w+', '', some_txt)\n# remove punctuation\nsome_txt = gsub('[[:punct:]]', '', some_txt)\n# remove numbers\nsome_txt = gsub('[[:digit:]]', '', some_txt)\n# remove html links\nsome_txt = gsub('http\\\\w+', '', some_txt)\n# remove unnecessary spaces\nsome_txt = gsub('[ \\t]{2,}', '', some_txt)\nsome_txt = gsub('^\\\\s+|\\\\s+$', '', some_txt)\n\n# define 'tolower error handling' function\ntry.error = function(x)\n{\n  # create missing value\n  y = NA\n  # tryCatch error\n  try_error = tryCatch(tolower(x), error=function(e) e)\n  # if not an error\n  if (!inherits(try_error, 'error'))\n    y = tolower(x)\n  # result\n  return(y)\n}\n# lower case using try.error with sapply\nsome_txt = sapply(some_txt, try.error)\n\n# remove NAs in some_txt\nsome_txt = some_txt[!is.na(some_txt)]\nnames(some_txt) = NULL\n\n# Perform Sentiment Analysis\n# classify emotion\nclass_emo = classify_emotion(some_txt, algorithm='bayes', prior=1.0)\n# get emotion best fit\nemotion = class_emo[,7]\n# substitute NA's by 'unknown'\nemotion[is.na(emotion)] = 'unknown'\n\n# classify polarity\nclass_pol = classify_polarity(some_txt, algorithm='bayes')\n# get polarity best fit\npolarity = class_pol[,4]\n# Create data frame with the results and obtain some general statistics\n# data frame with results\nsent_df = data.frame(text=some_txt, emotion=emotion,\n                     polarity=polarity, stringsAsFactors=FALSE)\n\n# sort data frame\nsent_df = within(sent_df,\n                 emotion <- factor(emotion, levels=names(sort(table(emotion), decreasing=TRUE))))\n# Let’s do some plots of the obtained results\n# plot distribution of emotions\nggplot(sent_df, aes(x=emotion)) +\n  geom_bar(aes(y=..count.., fill=emotion)) +\n  scale_fill_brewer(palette='Dark2') +\n  labs(x='emotion categories', y='number of tweets') +\n  ggtitle('Sentiment Analysis of Tweets about Zimbabwe\\n(classification by emotion)') +\n  theme(plot.title = element_text(size=12, face='bold'))\n# plot distribution of polarity\nggplot(sent_df, aes(x=polarity)) +\n  geom_bar(aes(y=..count.., fill=polarity)) +\n  scale_fill_brewer(palette='RdGy') +\n  labs(x='polarity categories', y='number of tweets') +\n  ggtitle('Sentiment Analysis of Tweets about Zimbabwe\\n(classification by polarity)') +\n  theme(plot.title = element_text(size=12, face='bold'))\n# Separate the text by emotions and visualize the words with a comparison cloud\n# separating text by emotion\nemos = levels(factor(sent_df$emotion))\nnemo = length(emos)\nemo.docs = rep('', nemo)\nfor (i in 1:nemo)\n{\n  tmp = some_txt[emotion == emos[i]]\n  emo.docs[i] = paste(tmp, collapse=' ')\n}\n\n# remove stopwords\nemo.docs = removeWords(emo.docs, stopwords('english'))\n# create corpus\ncorpus = Corpus(VectorSource(emo.docs))\ntdm = TermDocumentMatrix(corpus)\ntdm = as.matrix(tdm)\ncolnames(tdm) = emos\n\n# comparison word cloud\ncomparison.cloud(tdm, colors = brewer.pal(nemo, 'Dark2'),\n                 scale = c(3,.5), random.order = FALSE, title.size = 1.5)\nwarnings()\n\n",
+    "created" : 1476712051120.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3915178671",
+    "id" : "9DACD3C9",
+    "lastKnownWriteTime" : 1476715461,
+    "last_content_update" : 1476715461439,
+    "path" : "~/MoyoBusinessAdvisory/R/RPracticals/getTweets.R",
+    "project_path" : "getTweets.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

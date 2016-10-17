@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "if (!require('pacman')) install.packages('pacman&')\npacman::p_load(devtools, installr)\ninstall.Rtools()\ninstall_url('http://cran.r-project.org/src/contrib/Archive/Rstem/Rstem_0.4-1.tar.gz')\ninstall_url('http://cran.r-project.org/src/contrib/Archive/sentiment/sentiment_0.2.tar.gz')\n",
+    "created" : 1476709657504.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1046760859",
+    "id" : "744BC7F0",
+    "lastKnownWriteTime" : 1476709671,
+    "last_content_update" : 1476709789665,
+    "path" : "~/MoyoBusinessAdvisory/R/RPracticals/installsentiment.R",
+    "project_path" : "installsentiment.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
