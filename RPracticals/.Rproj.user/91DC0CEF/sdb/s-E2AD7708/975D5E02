@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "x<-runif(100)\nx*10\nprint(mean(x))\nprint(median(x))",
+    "created" : 1476695317669.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2593998081",
+    "id" : "975D5E02",
+    "lastKnownWriteTime" : 1476695816,
+    "last_content_update" : 1476695816678,
+    "path" : "~/MoyoBusinessAdvisory/R/RPracticals/myfirstscript.R",
+    "project_path" : "myfirstscript.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

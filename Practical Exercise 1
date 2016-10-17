@@ -1,0 +1,53 @@
+- getwd() : Get Working Directory
+- File -> New Project -> 
+- its best practise to create a seperate folder for data
+- ctrl + enter = Run script line by line
+- if you are sourcing stuff in, you need to embed command in a Print statement
+- ?names - Opena help file... alternative is help(names)
+- R is inteprative rather than compilative, doesnt compile like SAS
+
+## Get Help
+
+- type r-help matrix multiplication 
+____________________________________________
+
+- setwd("path to project")
+
+Equal to : ==
+Not equal to: !=
+Equal to one in list: %in%
+and : &
+or : |
+
+## Data Types
+
+Vectors
+Daat Frames
+Lists
+Matrices
+Custom objects i.e. object-orientation e.g. Summary function
+
+## Sub-setting vectors
+runif - random uniform
+
+## Vector subsetting
+
+head() - first 6
+tail() - last 6
+x[1] - 1st value
+head(x,1)
+x[50:60] - values at index 50 to 60
+x[x>0.5] - get values greater than 0.5
+y<-x[x<=0.5] - assign to y all values in x less than or equal to 0.5
+
+
+##Vectorization
+
+(y) - prints out
+
+## Data frames
+
+-similiar to SQL Table, can have columns of different types
+
+df<- data.frame(a=letters,b=runif(26))
+str(df) - gives you structure of the data frame

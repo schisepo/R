@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "mat <-matrix(runif(1000),nrow = 100,ncol = 10)\nmat\nhead(mat)\nupper.tri(mat)\ndiag(mat)\nt(mat)\nvec<-1:10\nmat%*% vec\n",
+    "created" : 1476698686120.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "90760608",
+    "id" : "32B613B5",
+    "lastKnownWriteTime" : 1476698883,
+    "last_content_update" : 1476698883564,
+    "path" : "~/MoyoBusinessAdvisory/R/RPracticals/matrices.R",
+    "project_path" : "matrices.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
